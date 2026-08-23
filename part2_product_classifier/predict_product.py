@@ -1,4 +1,3 @@
-# predict_product.py
 # Load the saved model and classify one sample image.
 
 import torch
