@@ -1,0 +1,109 @@
+PART 2 - PRODUCT IMAGE CATEGORISER
+==================================
+
+Dataset: Fashion-MNIST
+Training images: 60,000
+Test images: 10,000
+
+Model: ResNet-18 Transfer Learning
+
+FINAL TEST ACCURACY
+===================
+Test Accuracy: 86.58%
+
+MODEL
+=====
+Saved model:
+models/product_classifier.pt
+
+
+CONFUSION MATRIX
+================
+
+Rows = Actual class
+Columns = Predicted class
+
+              T-shirt  Trouser  Pullover  Dress  Coat  Sandal  Shirt  Sneaker  Bag  Ankle boot
+
+T-shirt/top       828        1        28      58     8       1     64        1   11          0
+Trouser             2      966         2      20     2       1      6        0    1          0
+Pullover           15        0       848       9    65       0     60        0    3          0
+Dress              26       11        25     851    35       2     47        0    3          0
+Coat                3        1        81      35   821       0     59        0    0          0
+Sandal              0        0         0       1     0     912      0       70    1         16
+Shirt             148        1        93      51   130       0    564        0   13          0
+Sneaker             0        0         0       0     0      14      0      958    2         26
+Bag                 3        0         5       7     5       3      8        4  962          3
+Ankle boot          0        0         0       1     0       5      1       44    1        948
+
+
+PER-CLASS PRECISION
+===================
+
+T-shirt/top : 0.8078
+Trouser     : 0.9857
+Pullover    : 0.7837
+Dress       : 0.8238
+Coat        : 0.7702
+Sandal      : 0.9723
+Shirt       : 0.6972
+Sneaker     : 0.8895
+Bag         : 0.9649
+Ankle boot  : 0.9547
+
+
+PER-CLASS RECALL
+================
+
+T-shirt/top : 0.8280
+Trouser     : 0.9660
+Pullover    : 0.8480
+Dress       : 0.8510
+Coat        : 0.8210
+Sandal      : 0.9120
+Shirt       : 0.5640
+Sneaker     : 0.9580
+Bag         : 0.9620
+Ankle boot  : 0.9480
+
+
+TOP 2 ACTUAL CONFUSION PAIRS
+============================
+
+1. Actual: Shirt
+   Predicted: T-shirt/top
+   Count: 148
+
+2. Actual: Shirt
+   Predicted: Coat
+   Count: 130
+
+
+CONFUSION ANALYSIS
+==================
+
+1. Shirt -> T-shirt/top
+
+The model most frequently confused Shirt images with T-shirt/top images.
+This is plausible because both categories represent upper-body clothing
+and can have similar shapes and silhouettes in the small grayscale
+Fashion-MNIST images. Details such as collars, sleeves and shirt
+structure can be difficult to distinguish.
+
+
+2. Shirt -> Coat
+
+The second major confusion was between Shirt and Coat. These categories
+can have overlapping upper-body silhouettes, especially when the original
+low-resolution grayscale image does not clearly show clothing details.
+The model therefore sometimes identifies the overall shape as a Coat
+even when the actual class is Shirt.
+
+
+SINGLE IMAGE PREDICTION
+=======================
+
+Image selected: data/sample_images/09_ankle_boot.png
+
+Predicted category: Ankle boot
+Confidence: 0.9231
