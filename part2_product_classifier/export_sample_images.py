@@ -34,4 +34,4 @@ for index in range(len(test_data)):
     if len(used_classes) == 5:
         break
 
-print("Done. Check: data/sample_images/")
+print("Done. sample_inages folder are png file")
