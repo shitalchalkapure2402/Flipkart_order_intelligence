@@ -701,17 +701,6 @@ The current run then stopped during the later return-risk/multi-turn stage.
 
 The error was caused by a dependency mismatch while loading the Part 1 pickle:
 
-```text
-Saved with scikit-learn 1.6.1
-Current environment: scikit-learn 1.9.0
-```
-
-The console first reported `InconsistentVersionWarning` and then failed with:
-
-```text
-AttributeError:
-Can't get attribute '_RemainderColsList'
-```
 
 Therefore these Part 3 tests are **not yet confirmed as completed**:
 
@@ -738,11 +727,6 @@ torchvision 0.28.0
 faiss-cpu 1.15.0
 ```
 
-The Part 1 pickle was created with:
-
-```text
-scikit-learn 1.6.1
-```
 
 The scikit-learn version mismatch must be resolved for the final return-risk tool run.
 
