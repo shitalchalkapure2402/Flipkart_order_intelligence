@@ -728,10 +728,6 @@ faiss-cpu 1.15.0
 ```
 
 
-The scikit-learn version mismatch must be resolved for the final return-risk tool run.
-
----
-
 # 30. Installation
 
 Create a Python 3.12 virtual environment:
@@ -801,7 +797,7 @@ models/
 Run:
 
 ```powershell
-python train_product.py
+python train_product_model.py
 ```
 
 Expected artifact:
